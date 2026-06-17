@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+
+  <link rel="stylesheet" href="/stylesheets/profile.css">
+</head>
+<body>
+
+  <div class="profile-container">
+
+    <!-- Profile Header -->
+    <div class="profile-header">
+      <img
+        src="https://i.pravatar.cc/200"
+        alt="profile"
+        class="profile-pic"
+      >
+
+      <h1>fullName</h1>
+
+      <p class="username">username</p>
+
+      <p class="bio">
+        Designer • Photographer • Dreamer ✨
+      </p>
+
+      <div class="stats">
+        <div>
+          <h3>124</h3>
+          <span>Pins</span>
+        </div>
+
+        <div>
+          <h3>2.5k</h3>
+          <span>Followers</span>
+        </div>
+
+        <div>
+          <h3>180</h3>
+          <span>Following</span>
+        </div>
+      </div>
+      <button class="edit-btn">Logout</button>
+    </div>
+    <form action ="/upload" method ="post" enctype = "multipart/form-data">
+      <input type="file" name="file">
+      <input type="text" name="filecaption" placeholder="Some Caption">
+      <button type="submit">upload</button>
+    </form>
+       
+    <!-- Pins Grid -->
+    <div class="pins-grid">
+
+      <div class="pin">
+        <img src="https://picsum.photos/300/450?1" alt="">
+      </div>
+
+      <div class="pin">
+        <img src="https://picsum.photos/300/350?2" alt="">
+      </div>
+
+      <div class="pin">
+        <img src="https://picsum.photos/300/500?3" alt="">
+      </div>
+
+      <div class="pin">
+        <img src="https://picsum.photos/300/400?4" alt="">
+      </div>
+
+      <div class="pin">
+        <img src="https://picsum.photos/300/550?5" alt="">
+      </div>
+
+      <div class="pin">
+        <img src="https://picsum.photos/300/380?6" alt="">
+      </div>
+      <div class ="pin">
+             <% user.posts.forEach(function(post){ %>
+                <img src="/images/<%= post.image%>" alt="">
+            <% })%>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
